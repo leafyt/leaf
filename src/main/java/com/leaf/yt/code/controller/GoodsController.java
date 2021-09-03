@@ -10,6 +10,9 @@ import com.leaf.yt.code.utils.entity.JsonMapper;
 import com.leaf.yt.code.utils.entity.OmuiPage;
 import com.leaf.yt.code.utils.entity.Resp;
 import com.leaf.yt.code.utils.export.ExportMethod;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -31,6 +34,7 @@ import java.util.Map;
  * @author liuzhinan
  * @since 2020-07-22
  */
+@Api(value = "desc of class")
 @Controller
 @RequestMapping(value = "/admin/goods")
 public class GoodsController {
@@ -45,10 +49,11 @@ public class GoodsController {
         return "/goods/list";
     }
 
+    @ApiOperation(value = "desc of method", notes = "")
     @RequestMapping(value = "searchList", method = RequestMethod.POST)
     @ResponseBody
     @ExportMethod(serviceClass = GoodsExportService.class, memo = "明细导出")
-    public String searchList(ServletRequest request, @ModelAttribute("page") OmuiPage page) {
+    public String searchList(ServletRequest request, @ApiParam(value = "明细列表查询" , required=true ) @ModelAttribute("page") OmuiPage page) {
         try {
             Map<String, Object> searchParam = ParameterUtil.getParametersStartingWith(request, "filter_");
             GridDataModel<GoodsVO> gd = goodsService.findByPage(searchParam, page);

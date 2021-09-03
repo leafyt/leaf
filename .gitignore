@@ -21,3 +21,26 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+leaf.iml
+src/test/java/com/lzn/
+target/classes/application.yml
+target/classes/mybatis/
+target/classes/static/
+target/classes/templates/
+target/classes/test_goods.sql
+target/generated-sources/
+target/generated-test-sources/
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/leaf.iml
+/.gitignore

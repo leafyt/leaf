@@ -137,7 +137,7 @@
 		<input id="start-time" style="width: 118px" name="filter_beginDate"/>
 		-
 		<input id="time-end"  style="width: 118px" name="filter_endDate"/>
-		<span id="searchButton">查询</span>
+		<div id="searchButton">查询</div>
 	</div>
 	</form>
 </div>
