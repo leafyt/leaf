@@ -49,7 +49,7 @@ public class GoodsController {
         return "/goods/list";
     }
 
-    @ApiOperation(value = "desc of method", notes = "")
+    @ApiOperation(value = "明细列表查询", notes = "明细列表查询")
     @RequestMapping(value = "searchList", method = RequestMethod.POST)
     @ResponseBody
     @ExportMethod(serviceClass = GoodsExportService.class, memo = "明细导出")
