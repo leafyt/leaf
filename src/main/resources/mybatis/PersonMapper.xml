@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.leaf.yt.code.dao.PersonMapper" >
-  <resultMap id="BaseResultMap" type="com.leaf.yt.code.entity.Person" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="age" property="age" jdbcType="INTEGER" />
-    <result column="sex" property="sex" jdbcType="INTEGER" />
-    <result column="code" property="code" jdbcType="VARCHAR" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+<mapper namespace="com.leaf.yt.code.dao.PersonMapper">
+    <resultMap id="BaseResultMap" type="com.leaf.yt.code.entity.Person">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="sex" property="sex" jdbcType="INTEGER"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from person
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.leaf.yt.code.entity.Person" >
-    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into person (name, age, sex, 
-      code)
-    values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, 
-      #{code,jdbcType=VARCHAR})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.leaf.yt.code.entity.Person" >
+    <insert id="insert" parameterType="com.leaf.yt.code.entity.Person">
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into person (name, age, sex,
+        code)
+        values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER},
+        #{code,jdbcType=VARCHAR})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.leaf.yt.code.entity.Person">
     update person
     set name = #{name,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},
@@ -29,13 +29,17 @@
       code = #{code,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
     select id, name, age, sex, code
     from person
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap" >
+    <select id="selectAll" resultMap="BaseResultMap">
     select id, name, age, sex, code
     from person
   </select>
+    <!--登录-->
+    <select id="login" resultType="com.leaf.yt.code.entity.Person">
+        SELECT * FROM person WHERE username=#{username} AND PASSWORD=#{password}
+    </select>
 </mapper>

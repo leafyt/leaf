@@ -9,8 +9,6 @@ import lombok.ToString;
 /**
  * 数据库表名 test_goods
  *
- * @author liuzhinan
- * @date 2020-07-22
  */
 @Getter
 @Setter

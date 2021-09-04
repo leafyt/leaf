@@ -17,8 +17,6 @@ import java.util.Map;
  * 导出
  * </p>
  *
- * @author liuzhinan
- * @since 2020-07-22
  */
 @Component
 public class GoodsExportService extends AbstractCSVExportService<GoodsVO> {

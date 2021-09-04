@@ -12,8 +12,6 @@ import java.util.Date;
 
 /**
  *  视图对象
- * @author: liuzhinan
- * @date 2020-07-22
  * */
 @Getter
 @Setter

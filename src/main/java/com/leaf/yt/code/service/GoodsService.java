@@ -17,8 +17,6 @@ import java.util.*;
  *  服务类
  * </p>
  *
- * @author liuzhinan
- * @since 2020-07-22
  */
 @Service
 public class GoodsService {

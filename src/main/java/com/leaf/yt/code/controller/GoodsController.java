@@ -31,8 +31,6 @@ import java.util.Map;
  * ${tablecomment}  前端控制器
  * </p>
  *
- * @author liuzhinan
- * @since 2020-07-22
  */
 @Api(value = "desc of class")
 @Controller
