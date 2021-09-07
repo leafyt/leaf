@@ -30,12 +30,12 @@ import java.util.Map;
  * <p>
  * ${tablecomment}  前端控制器
  * </p>
- *
  */
 @Api(value = "desc of class")
 @Controller
 @RequestMapping(value = "/admin/goods")
 public class GoodsController {
+
     private static Logger logger = LoggerFactory.getLogger(GoodsController.class);
 
     @Resource
@@ -51,7 +51,7 @@ public class GoodsController {
     @RequestMapping(value = "searchList", method = RequestMethod.POST)
     @ResponseBody
     @ExportMethod(serviceClass = GoodsExportService.class, memo = "明细导出")
-    public String searchList(ServletRequest request, @ApiParam(value = "明细列表查询" , required=true ) @ModelAttribute("page") OmuiPage page) {
+    public String searchList(ServletRequest request, @ApiParam(value = "明细列表查询", required = true) @ModelAttribute("page") OmuiPage page) {
         try {
             Map<String, Object> searchParam = ParameterUtil.getParametersStartingWith(request, "filter_");
             GridDataModel<GoodsVO> gd = goodsService.findByPage(searchParam, page);

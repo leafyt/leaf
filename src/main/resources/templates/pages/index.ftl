@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="en" >
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>宿舍管理系统</title>
-    <!--    <link rel="stylesheet" th:href="@{/css/public.css}">
-        <link rel="stylesheet" th:href="@{/css/style.css}">-->
-    <style>
-        #parent{
-            margin-top:13%;
-            margin-left:45%;
-            transform:translate(-50%,-50%) ;
+    <title>MENU</title>
+    <style type="text/css">
+        .menu {
+            width: 694px;
+            height: 50px;/*设置元素水平居中*/
+            margin: 50px auto 0;/*去除内联元素间隙*/
+            font-size: 0;/*去掉ul自带的.格式*/
+            list-style: none;
+            padding: 0;
         }
+
+        .menu li{/*将元素转换为行内块元素*/
+            display:inline-block;
+            width:98px;
+            height:48px;
+            border:1px solid gold;
+            font-size:16px;/*将边框合并*/
+            margin-right:-1px;
+            text-align:center;
+            line-height:48px;
+        }
+        .menu a{
+            font-family: "Microsoft YaHei UI";
+            color: #ff8053;/*去掉a元素的下划线*/
+            text-decoration: none;
+        }/*鼠标位于元素位置时改变元素样式*/
+        .menu li:hover{
+            background-color: orange;
+        }
+
+        .menu a:hover{
+            color:#fff;
+        }
+
     </style>
 </head>
 <body>
-<div id="parent">
-    <!--头部-->
-    <header class="publicHeader">
-        <div class="publicHeaderR">
-            <#--<p><span></span><span style="color: red" th:text="${session.login.name()}"></span> , 欢迎你！  <a href="/user/remover">退出登录</a></p>-->
-        </div>
-    </header>
-    <!--主体内容-->
-    <section class="publicMian">
-        <div class="left">
-            <nav>
-                <ul class="list">
-                    <li ><a href="/person/dormList">宿舍列表</a></li>
-                    <li><a href="/person/list">人员信息列表</a></li>
-                    <li><a href="/person/view">入住情况统计</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="right" style="border: 3px solid blue;width: 400px;height: 200px;margin-top: -100px;margin-left: 200px"  >
-            <div class="wFont" style="text-align:center;margin-top:10% ">
-                <p>欢迎使用宿舍管理系统!</p>
-            </div>
-        </div>
-    </section>
-</div>
+<ul class="menu">
+    <li><a href="">首页</a></li>
+    <li><a href="">宿舍楼管理</a></li>
+    <li><a href="">入住人员管理</a></li>
+    <li><a href="">水电费计算</a></li>
+    <li><a href="">系统管理</a></li>
+</ul>
 </body>
 </html>
